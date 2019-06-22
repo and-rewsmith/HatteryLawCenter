@@ -217,3 +217,16 @@ $(document).ready(function($) {
 
 });
 
+function sendEmail(){
+	let data = $('#form0').serialize();
+	console.log(data);
+	$.ajax({
+			url:'https://av90pizffl.execute-api.us-east-1.amazonaws.com/default/sendEmail',
+			type:'post',
+			data: data,
+			success:function(){
+					alert("Your info has been sent!");
+			}
+	});
+}
+
