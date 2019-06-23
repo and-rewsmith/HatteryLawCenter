@@ -218,15 +218,26 @@ $(document).ready(function($) {
 });
 
 function sendEmail(){
-	let data = $('#form0').serialize();
+	const name = $('#name').val();
+	const email = $('#email').val();
+	const message = $('#message').val();
+	const data = {
+		name,
+		email,
+		message
+	}
 	console.log(data);
 	$.ajax({
 			url:'https://av90pizffl.execute-api.us-east-1.amazonaws.com/default/sendEmail',
 			type:'post',
-			data: data,
-			success:function(){
+			data: JSON.stringify(data),
+			dataType: 'text',
+			processData: false,
+			success:function(data){
+					console.log(data);
 					alert("Your info has been sent!");
-			}
+			},
+			error: function(req, err){ console.log('my message' + err); }
 	});
 }
 
