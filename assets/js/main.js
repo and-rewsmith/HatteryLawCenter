@@ -239,5 +239,6 @@ function sendEmail(){
 			},
 			error: function(req, err){ console.log('my message' + err); }
 	});
+	return false;
 }
 
