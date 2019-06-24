@@ -239,6 +239,7 @@ function sendEmail(){
 			},
 			error: function(req, err){ console.log('my message' + err); }
 	});
+  fbq('track', 'Lead');
 	return false;
 }
 
