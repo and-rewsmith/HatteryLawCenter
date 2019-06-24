@@ -240,11 +240,7 @@ function sendEmail(){
 			error: function(req, err){ console.log('my message' + err); }
 	});
   fbq('track', 'Lead');
-	ga('send', {
-		hitType: 'event',
-		eventCategory: 'Lead',
-		eventAction: 'Submit Consultation Form',
-	});
+	gtag('event', 'Lead', { 'send_to': 'UA-142625002-1' });
 	return false;
 }
 
