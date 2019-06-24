@@ -240,7 +240,7 @@ function sendEmail(){
 			error: function(req, err){ console.log('my message' + err); }
 	});
   fbq('track', 'Lead');
-	gtag('event', 'Lead', { 'send_to': 'UA-142625002-1' });
+	gtag('event', 'Lead');
 	return false;
 }
 
